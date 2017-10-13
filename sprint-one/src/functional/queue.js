@@ -12,18 +12,14 @@ var Queue = function() {
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
-<<<<<<< HEAD
     storage[key] = value; 
     console.log(storage)
-=======
     storage[key] = value;
->>>>>>> d2d0439071ed8117a56d4603eae85b948150c582
+
     key++;
   };
-  // console.log(storage) why doesn't print ? 
 
   someInstance.dequeue = function() {
-<<<<<<< HEAD
     var firstElement = storage[end]
     if(storage[end]){    
         delete storage[end];
@@ -34,7 +30,6 @@ var Queue = function() {
 
   someInstance.size = function() {
     return key-end;
-=======
     
     if (storage[start]) { 
       var last = storage[start];
@@ -49,7 +44,6 @@ var Queue = function() {
   someInstance.size = function() {
 
     return key-start;
->>>>>>> d2d0439071ed8117a56d4603eae85b948150c582
   };
 
   return someInstance;
@@ -58,10 +52,7 @@ var Queue = function() {
 };
 
 
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> d2d0439071ed8117a56d4603eae85b948150c582

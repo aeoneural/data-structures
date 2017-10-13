@@ -8,7 +8,6 @@ var Stack = function() {
 
   // Implement the methods below
   someInstance.push = function(value) {
-<<<<<<< HEAD
     key++; 
     storage[key] = value;
     console.log(storage)
@@ -22,7 +21,6 @@ var Stack = function() {
       key--;
     }
     return lastElement
-=======
     key++;
     storage[key] = value;
       
@@ -36,15 +34,11 @@ var Stack = function() {
       key--;
     }
     return last;
->>>>>>> d2d0439071ed8117a56d4603eae85b948150c582
   };
 
   someInstance.size = function() {
     return key;
-<<<<<<< HEAD
 
-=======
->>>>>>> d2d0439071ed8117a56d4603eae85b948150c582
   };
 
   return someInstance;
