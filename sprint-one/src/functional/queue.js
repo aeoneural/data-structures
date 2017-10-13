@@ -4,9 +4,7 @@ var Queue = function() {
   // Use an object with numeric keys to store values
 
   var key = 0;
-  var start = 0;
   var storage = {};
-  var key = 0;
   var end = 0;
 
   // Implement the methods below
@@ -31,10 +29,10 @@ var Queue = function() {
   someInstance.size = function() {
     return key-end;
     
-    if (storage[start]) { 
-      var last = storage[start];
+    if (storage[end]) { 
+      var last = storage[end];
       delete last;
-      start++;
+      end++;
     }
 
     return last;
@@ -43,7 +41,7 @@ var Queue = function() {
 
   someInstance.size = function() {
 
-    return key-start;
+    return key-end;
   };
 
   return someInstance;
