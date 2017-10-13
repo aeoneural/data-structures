@@ -27,19 +27,22 @@ treeMethods.addChild = function(value) {
 treeMethods.contains = function(target) {
   // var root = this;
   // console.log(this);
+  var output; 
   var traverser = function(node) {
     if (node.value === target) {
       console.log(node.value);
-      return true;  
+      output = true
     } else {
       node.children.forEach(function(subTree) {
         traverser(subTree);
       });
-      
-      return false; 
     }
   };
-  return traverser(this);
+  traverser(this);
+  if(output){ 
+  	return true;
+  }
+  return false
 };
 
 var example = Tree(1);
