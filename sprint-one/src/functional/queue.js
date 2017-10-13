@@ -1,56 +1,48 @@
-var Queue = function() {
-  var someInstance = {};
-
-  // Use an object with numeric keys to store values
-
-  var key = 0;
-  var storage = {};
-  var end = 0;
-
-  // Implement the methods below
-
-  someInstance.enqueue = function(value) {
-    storage[key] = value; 
-    console.log(storage)
-    storage[key] = value;
-
-    key++;
-  };
-
-  someInstance.dequeue = function() {
-    var firstElement = storage[end]
-    if(storage[end]){    
-        delete storage[end];
-        end++;
-    }
-    return firstElement
-  };
-
-  someInstance.size = function() {
-    return key-end;
-    
-    if (storage[end]) { 
-      var last = storage[end];
-      delete last;
-      end++;
-    }
-
-    return last;
-    
-  };
-
-  someInstance.size = function() {
-
-    return key-end;
-  };
-
-  return someInstance;
-
-  //test
+var extend = function(to, from) {
+  for (var key in from) {
+    to[key] = from[key];
+  }
 };
 
+var Queue = function() {
+  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
+  // but try not not reference your old code in writing the new style.
 
+  var instance = {
+    key: 0, 
+    storage: {}, 
+    start: 0
+  };
+  extend(instance, queueMethods);
+  
+  return instance;
+};
 
+var queueMethods = {};
+
+queueMethods.dequeue = function() { 
+  var first = this.storage[this.start];
+  if (this.storage[this.start]) {
+    delete this.storage[this.start];
+    this.start++; 
+  }
+  return first;
+  
+};
+queueMethods.enqueue = function(value) { 
+  this.storage[this.key] = value;
+  this.key++;
+
+  
+};
+queueMethods.size = function(value) { 
+  return this.key - this.start;
+  
+};
+
+var q1 = Queue()
+q1.enqueue(1)
+q1.dequeue()
 
 
 
